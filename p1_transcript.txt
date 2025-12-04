@@ -1,0 +1,55 @@
+# Compile of hectorborjasgcd.sv was successful.
+# Compile of hectorborjasgcd_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vopt +cover=sbf hectorborjasgcd_tb -o hectorborjasgcd_tb_opt
+# QuestaSim-64 vopt 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 01:14:06 on Dec 02,2025
+# vopt -reportprogress 300 "+cover=sbf" hectorborjasgcd_tb -o hectorborjasgcd_tb_opt 
+# 
+# Top level modules:
+# 	hectorborjasgcd_tb
+# 
+# Analyzing design...
+# -- Loading module hectorborjasgcd_tb
+# -- Loading module hectorborjasgcd
+# ** Warning: /ecel/UFAD/hborjas/Downloads/svlab3-main/hectorborjasgcd_tb.sv(28): (vopt-2241) Connection width does not match width of port 'result'. The port definition is at: /ecel/UFAD/hborjas/Downloads/svlab3-main/hectorborjasgcd.sv(6).
+# Optimizing 2 design-units (inlining 1/2 module instances):
+# -- Inlining module hectorborjasgcd(fast)
+# -- Optimizing module hectorborjasgcd_tb(fast)
+# ** Note: (vopt-143) Recognized 1 FSM in module "hectorborjasgcd(fast)".
+# Optimized design name is hectorborjasgcd_tb_opt
+# End time: 01:14:07 on Dec 02,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+add wave *
+run -all
+# No Design Loaded!
+vsim -coverage hectorborjasgcd_tb_opt
+# vsim -coverage hectorborjasgcd_tb_opt 
+# Start time: 01:18:01 on Dec 02,2025
+# Loading sv_std.std
+# Loading work.hectorborjasgcd_tb(fast)
+add wave *
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '*'.
+run -all
+# All tests completed.
+# ** Note: $finish    : /ecel/UFAD/hborjas/Downloads/svlab3-main/hectorborjasgcd_tb.sv(102)
+#    Time: 59300 ns  Iteration: 1  Instance: /hectorborjasgcd_tb
+# 1
+# Break in Module hectorborjasgcd_tb at /ecel/UFAD/hborjas/Downloads/svlab3-main/hectorborjasgcd_tb.sv line 102
+# FSM state variable does not exist: state
+coverage report -summary
+# Coverage Report Totals BY INSTANCES: Number of Instances 2
+# 
+#     Enabled Coverage              Bins      Hits    Misses    Weight  Coverage
+#     ----------------              ----      ----    ------    ------  --------
+#     Assertions                       2         2         0         1   100.00%
+#     Branches                        20        16         4         1    80.00%
+#     FSM States                       3         3         0         1   100.00%
+#     FSM Transitions                  4         3         1         1    75.00%
+#     Statements                      59        57         2         1    96.61%
+# Total coverage (filtered view): 90.32%
+# 
+# 
+# FSM state variable does not exist: state
+
+
